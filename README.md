@@ -1,150 +1,124 @@
 # Abdalla Ayman
 
-## Backend-Focused Software Engineer
+### Backend Software Engineer
 
-I'm a software engineer focused on building reliable backend systems, REST APIs, data pipelines, and production-ready web applications.
+Backend-focused software engineer working mainly with Python, Django, PostgreSQL, and Docker.
 
-I primarily work with Python and Django, with hands-on experience across backend development, databases, web scraping, search systems, Docker, and full-stack application architecture.
-
-I also work with businesses to turn requirements and ideas into practical software solutions.
+I build backend systems, REST APIs, web scraping pipelines, and data-driven applications for businesses and personal projects.
 
 ---
 
-## About Me
+## Tech Stack
 
-- Backend-focused software engineer
-- Strong focus on Python and Django
-- Experienced in building REST APIs with Django REST Framework
-- Experienced in web scraping and automated data extraction
-- Comfortable designing and working with PostgreSQL databases
-- Experience building search systems with Meilisearch
-- Experienced with Docker and multi-service applications
-- Comfortable working across backend, frontend, databases, and infrastructure
-- Strong interest in software architecture, system design, and computer science fundamentals
-- Experienced in taking projects from initial architecture to implementation and deployment
+**Languages**
 
----
+Python · C++ · JavaScript · TypeScript · SQL
 
-## Technical Skills
+**Backend**
 
-### Programming Languages
+Django · Django REST Framework · REST APIs
 
-- Python
-- C++
-- JavaScript
-- TypeScript
-- SQL
+**Databases**
 
-### Backend Development
+PostgreSQL · SQL
 
-- Django
-- Django REST Framework
-- REST API Development
-- API Architecture
-- Authentication and Authorization
-- Data Validation
-- Backend Architecture
-- Business Logic Implementation
+**Web Scraping**
 
-### Databases
+Scrapy · Playwright · Scrapy-Playwright
 
-- PostgreSQL
-- SQL
-- Database Design
-- Data Modeling
-- Query Optimization
+**Search**
 
-### Web Scraping
+Meilisearch
 
-- Scrapy
-- Playwright
-- Scrapy-Playwright
-- Dynamic Website Scraping
-- Data Extraction
-- Data Cleaning and Processing
-- Automated Crawling Pipelines
+**DevOps**
 
-### Search
+Docker · Docker Compose · Linux
 
-- Meilisearch
-- Full-Text Search
-- Search Indexing
-- Search API Integration
+**Frontend**
 
-### DevOps and Infrastructure
+Next.js · React · TypeScript
 
-- Docker
-- Docker Compose
-- Linux
-- Environment Configuration
-- Multi-Container Applications
-- Production-Style Debugging
+**Tools**
 
-### Frontend
-
-- Next.js
-- React
-- TypeScript
-- React InstantSearch
-
-### Tools
-
-- Git
-- GitHub
-- VS Code
-- Postman
+Git · GitHub · Postman · VS Code
 
 ---
 
 ## Experience
 
-### Software Engineer — Freelance / Independent Projects
+### Freelance Software Engineer
 
-I build software solutions for businesses and independent clients, with a primary focus on backend engineering and data-driven applications.
+**Backend Development**
 
-My work includes:
-
-- Designing and developing backend architectures
-- Building REST APIs with Django REST Framework
-- Designing relational database structures
-- Developing web scraping systems
-- Processing and storing large amounts of extracted data
-- Building search and indexing systems
-- Containerizing applications with Docker
-- Integrating frontend applications with backend APIs
-- Debugging complex application and infrastructure issues
-- Translating business requirements into functional software systems
+- Building custom backend systems for businesses
+- Developing REST APIs with Django REST Framework
+- Designing PostgreSQL databases and data models
+- Building web scraping and data extraction systems
+- Integrating search engines and external services
+- Containerizing applications using Docker
+- Working across backend, database, and infrastructure layers
 
 ---
 
-## Featured Projects
+## Projects
 
 ### MarketLens
 
-A full-stack product search and price comparison platform designed to collect, process, index, and serve e-commerce product data.
+Product search and price comparison platform.
 
-#### Architecture
+**Stack:** Python · Scrapy · Playwright · Django REST Framework · PostgreSQL · Meilisearch · Next.js · React · Docker
 
-```text
-E-commerce Websites
-        |
-        v
-Scrapy + Playwright
-        |
-        v
-Data Processing
-        |
-        v
-PostgreSQL
-        |
-        v
-Meilisearch
-        |
-        v
-Django REST API
-        |
-        v
-Next.js / React
-        |
-        v
-Users
+- Built the scraping system for collecting e-commerce product data
+- Implemented dynamic scraping using Scrapy and Playwright
+- Built data processing and storage pipelines
+- Designed the backend API using Django REST Framework
+- Implemented product search using Meilisearch
+- Containerized the application using Docker
+- Integrated the backend, search engine, database, and frontend
+
+---
+
+### Daar Al-Bnaa
+
+Backend system for a construction company.
+
+**Stack:** Python · Django · Django REST Framework · PostgreSQL · Docker
+
+- Built the backend architecture and REST APIs
+- Implemented consultation request management
+- Built services and portfolio management
+- Implemented authentication and authorization
+- Designed the database models and API structure
+- Prepared the backend for frontend integration
+
+---
+
+## Currently Learning
+
+- Data Structures & Algorithms
+- System Design
+- Database Internals
+- Computer Networks
+- Operating Systems
+- C++
+- Backend Architecture
+
+---
+
+## GitHub
+
+Most of my repositories focus on:
+
+- Backend development
+- Django applications
+- Web scraping
+- APIs
+- Databases
+- Automation
+- Full-stack projects
+
+---
+
+## Contact
+
+[LinkedIn](https://www.linkedin.com/in/abdalla-ayman-760154345/) 
