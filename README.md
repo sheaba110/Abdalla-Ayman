@@ -77,7 +77,7 @@ Product search and price comparison platform for collecting, processing, indexin
 * Containerized the application using Docker
 * Integrated the backend, database, search engine, and frontend
 
-[View Repository](https://github.com/YOUR_USERNAME/MARKETLENS_REPO)
+[View Repository](https://github.com/sheaba110/market_lens)
 
 ---
 
@@ -95,7 +95,7 @@ Backend system developed for a construction company.
 * Designed database models and API structure
 * Prepared the backend for frontend integration
 
-[View Repository](https://github.com/YOUR_USERNAME/DAAR_ALBNAA_REPO)
+[View Repository](https://github.com/sheaba110/Daar-ALbnaa-Egypt)
 
 ---
 
@@ -130,7 +130,7 @@ Most of my repositories focus on:
 
 ## Connect
 
-[GitHub](https://github.com/YOUR_USERNAME) · [LinkedIn](https://www.linkedin.com/in/abdalla-ayman-760154345/)
+[GitHub](https://github.com/sheaba110) · [LinkedIn](https://www.linkedin.com/in/abdalla-ayman-760154345/)
 
 ---
 
