@@ -1,2 +1,193 @@
-<h1>Hello, I'm Abdalla Sheaba</h1>
-<p>My Portfolio is coming soon!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdalla Sheaba | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 3rem;
+    }
+    .badge {
+      display: inline-block;
+      background-color: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      font-family: 'Fira Code', monospace;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    .links {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px dashed var(--accent);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .links a:hover {
+      color: var(--accent);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tag {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', monospace;
+    }
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.2rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-2px);
+    }
+    .project-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-title a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Available for opportunities</span>
+      <h1>Abdalla Sheaba</h1>
+      <p class="subtitle">Backend Software Engineer specializing in building scalable services, APIs, and distributed systems.</p>
+      <div class="links">
+        <a href="https://github.com/sheaba110" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="mailto:your-email@example.com">Email</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Skills & Technologies</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">Go / Node.js / Python</span>
+        <span class="skill-tag">REST APIs & GraphQL</span>
+        <span class="skill-tag">PostgreSQL / Redis</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Microservices</span>
+        <span class="skill-tag">Git & CI/CD</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured Projects</h2>
+      <div class="project-card">
+        <div class="project-title">
+          <span>Market Lens</span>
+          <a href="#" target="_blank">View Code &rarr;</a>
+        </div>
+        <p class="project-desc">High-throughput data analysis service designed to aggregate and process real-time market data.</p>
+        <div class="skills-grid">
+          <span class="skill-tag">Backend</span>
+          <span class="skill-tag">Database</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">
+          <span>Daar Al Bnaa</span>
+          <a href="#" target="_blank">View Code &rarr;</a>
+        </div>
+        <p class="project-desc">Management platform API handling enterprise resources, real-time logging, and role-based access.</p>
+        <div class="skills-grid">
+          <span class="skill-tag">API Design</span>
+          <span class="skill-tag">Auth</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Abdalla Sheaba &bull; Hosted on GitHub Pages</p>
+    </footer>
+  </div>
+</body>
+</html>
