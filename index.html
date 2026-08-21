@@ -1,193 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdalla Sheaba | Software Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #38bdf8;
-      --border: #334155;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdalla Sheaba — Backend Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper:      #EBE7DD;
+    --paper-dim:  #E2DDCF;
+    --ink:        #22241F;
+    --ink-soft:   #55574D;
+    --ink-faint:  #8B8C80;
+    --line:       #C8C2AF;
+    --pine:       #3C5A50;
+    --pine-soft:  #7C978B;
+    --pine-tint:  #DDE6E0;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--pine); color:var(--paper); }
+
+  a{ color:inherit; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--pine);
+  }
+
+  /* ---------- layout shell ---------- */
+
+  .shell{
+    max-width:1180px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:0;
+  }
+
+  /* ---------- sidebar ---------- */
+
+  aside{
+    padding:4.5rem 2.4rem 3rem 2rem;
+    position:sticky;
+    top:0;
+    align-self:start;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    border-right:1px solid var(--line);
+  }
+
+  .portrait-wrap{
+    width:148px;
+    height:148px;
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    margin-bottom:1.6rem;
+  }
+
+  .portrait-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:grayscale(45%) sepia(8%) saturate(85%) contrast(96%) brightness(98%);
+    display:block;
+  }
+
+  .id-name{
+    font-family:'Fraunces', serif;
+    font-weight:440;
+    font-size:1.5rem;
+    line-height:1.2;
+    margin-bottom:0.35rem;
+  }
+
+  .id-role{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    max-width:22ch;
+    margin-bottom:1.8rem;
+  }
+
+  nav{
+    display:flex;
+    flex-direction:column;
+    gap:0.55rem;
+    margin-bottom:auto;
+    padding-bottom:2.5rem;
+  }
+
+  nav a{
+    text-decoration:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:baseline;
+    gap:0.5rem;
+    width:fit-content;
+  }
+
+  nav a .tick{
+    color:var(--pine-soft);
+  }
+
+  nav a:hover{ color:var(--pine); }
+
+  .side-contact{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+    padding-top:1.6rem;
+    border-top:1px solid var(--line);
+  }
+
+  .side-contact a{
+    text-decoration:none;
+    font-size:0.84rem;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px dashed transparent;
+    padding-bottom:1px;
+  }
+
+  .side-contact a:hover{
+    color:var(--pine);
+    border-bottom-color:var(--pine-soft);
+  }
+
+  .side-contact a span.arrow{
+    color:var(--ink-faint);
+  }
+
+  /* ---------- main ---------- */
+
+  main{
+    padding:4.5rem 3rem 6rem 3.2rem;
+  }
+
+  section{
+    max-width:640px;
+    margin-bottom:6rem;
+    scroll-margin-top:2rem;
+  }
+  section:last-of-type{ margin-bottom:3rem; }
+
+  /* hero */
+
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:440;
+    font-size:2.3rem;
+    line-height:1.28;
+    letter-spacing:-0.01em;
+    margin:0.9rem 0 1.5rem;
+  }
+
+  .hero h1 em{
+    font-style:italic;
+    color:var(--pine);
+    font-weight:600;
+  }
+
+  .hero p.lede{
+    color:var(--ink-soft);
+    font-size:1.02rem;
+    max-width:52ch;
+  }
+
+  /* entity / schema card — signature element */
+
+  .entity-card{
+    margin-top:2.6rem;
+    border:1px solid var(--line);
+    background:var(--paper-dim);
+    border-radius:4px;
+    overflow:hidden;
+  }
+
+  .entity-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0.7rem 1.1rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    letter-spacing:0.04em;
+  }
+
+  .entity-head .dot{
+    display:inline-block;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--pine-soft);
+    margin-right:0.5rem;
+  }
+
+  .entity-row{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    border-top:1px solid var(--line);
+  }
+
+  .entity-row:first-of-type{ border-top:none; }
+
+  .entity-row .key{
+    padding:0.65rem 1.1rem;
+    color:var(--pine);
+    background:rgba(60,90,80,0.05);
+    border-right:1px solid var(--line);
+  }
+
+  .entity-row .val{
+    padding:0.65rem 1.1rem;
+    color:var(--ink-soft);
+  }
+
+  /* section headers */
+
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:440;
+    font-size:1.35rem;
+    margin-bottom:1.6rem;
+    display:flex;
+    align-items:baseline;
+    gap:0.7rem;
+  }
+
+  h2 .eyebrow{ font-size:0.68rem; }
+
+  p.section-intro{
+    color:var(--ink-soft);
+    font-size:0.96rem;
+    max-width:56ch;
+    margin-bottom:2rem;
+  }
+
+  /* focus / skills schema list */
+
+  .schema{
+    border-top:1px solid var(--line);
+  }
+
+  .schema-row{
+    display:grid;
+    grid-template-columns:130px 1fr 140px;
+    gap:1rem;
+    padding:0.85rem 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.88rem;
+    align-items:baseline;
+  }
+
+  .schema-row .field{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--pine);
+    font-size:0.78rem;
+  }
+
+  .schema-row .value{ color:var(--ink); }
+
+  .schema-row .note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--ink-faint);
+    text-align:right;
+  }
+
+  /* work / projects */
+
+  .project{
+    border-left:2px solid var(--line);
+    padding:0.2rem 0 0.2rem 1.4rem;
+    margin-bottom:2.6rem;
+    transition:border-color 0.2s ease;
+  }
+
+  .project:hover{ border-left-color:var(--pine); }
+
+  .project-top{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+    margin-bottom:0.5rem;
+  }
+
+  .project-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.15rem;
+  }
+
+  .project a.repo{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    text-decoration:none;
+    color:var(--pine);
+    border-bottom:1px solid var(--pine-soft);
+    white-space:nowrap;
+  }
+
+  .project a.repo:hover{ color:var(--ink); border-bottom-color:var(--ink); }
+
+  .project p{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    max-width:56ch;
+    margin-bottom:0.8rem;
+  }
+
+  .project-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.4rem 0.9rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--ink-faint);
+  }
+
+  .project-stack span::before{
+    content:"·";
+    color:var(--pine-soft);
+    margin-right:0.55rem;
+  }
+  .project-stack span:first-child::before{ content:""; margin-right:0; }
+
+  /* about */
+
+  .about p{
+    font-size:0.98rem;
+    color:var(--ink-soft);
+    max-width:58ch;
+    margin-bottom:1.1rem;
+  }
+
+  .about p strong{
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  /* footer */
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:2.4rem 3rem 3rem 3.2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:1rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    color:var(--ink-faint);
+  }
+
+  /* scroll reveal */
+
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion:reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  a:focus-visible, nav a:focus-visible, .side-contact a:focus-visible{
+    outline:2px solid var(--pine);
+    outline-offset:3px;
+  }
+
+  /* ---------- responsive ---------- */
+
+  @media (max-width:880px){
+    .shell{ grid-template-columns:1fr; }
+    aside{
+      position:relative;
+      height:auto;
+      border-right:none;
+      border-bottom:1px solid var(--line);
+      padding:2.6rem 1.6rem 2.2rem;
+      flex-direction:row;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      gap:0 2rem;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
-    .container {
-      max-width: 750px;
-      margin: 0 auto;
-    }
-    header {
-      margin-bottom: 3rem;
-    }
-    .badge {
-      display: inline-block;
-      background-color: rgba(56, 189, 248, 0.1);
-      color: var(--accent);
-      font-family: 'Fira Code', monospace;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      margin-bottom: 0.8rem;
-    }
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    p.subtitle {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-    .links {
-      margin-top: 1.2rem;
-      display: flex;
-      gap: 1rem;
-    }
-    .links a {
-      color: var(--text-main);
-      text-decoration: none;
-      font-size: 0.95rem;
-      border-bottom: 1px dashed var(--accent);
-      padding-bottom: 2px;
-      transition: color 0.2s;
-    }
-    .links a:hover {
-      color: var(--accent);
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    h2 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.2rem;
-      color: var(--text-main);
-    }
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .skill-tag {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 0.3rem 0.7rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-family: 'Fira Code', monospace;
-    }
-    .project-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 1.2rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      transition: transform 0.2s;
-    }
-    .project-card:hover {
-      transform: translateY(-2px);
-    }
-    .project-title {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 0.4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .project-title a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-    .project-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
-    }
-    footer {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-  </style>
+    .portrait-wrap{ width:104px; height:104px; margin-bottom:0.9rem; }
+    nav{ flex-direction:row; flex-wrap:wrap; margin-bottom:0; padding-bottom:0; gap:0.4rem 1.1rem; }
+    .side-contact{ width:100%; border-top:1px solid var(--line); margin-top:1.6rem; padding-top:1.2rem; flex-direction:row; flex-wrap:wrap; gap:0.3rem 1.4rem; }
+    .side-contact a{ width:auto; }
+    main{ padding:3rem 1.6rem 4rem; }
+    .entity-row{ grid-template-columns:100px 1fr; }
+    .schema-row{ grid-template-columns:1fr; gap:0.15rem; }
+    .schema-row .note{ text-align:left; }
+    footer{ padding:2rem 1.6rem 2.6rem; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <span class="badge">Available for opportunities</span>
-      <h1>Abdalla Sheaba</h1>
-      <p class="subtitle">Backend Software Engineer specializing in building scalable services, APIs, and distributed systems.</p>
-      <div class="links">
-        <a href="https://github.com/sheaba110" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/abdalla-sheaba-760154345/" target="_blank">LinkedIn</a>
-        <a href="mailto:abdallasheaba97@gmail.com">Email</a>
-      </div>
-    </header>
 
-    <section>
-      <h2>Skills & Technologies</h2>
-      <div class="skills-grid">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">REST APIs</span>
-        <span class="skill-tag">PostgreSQL</span>
-        <span class="skill-tag">Docker</span>
-        <!-- <span class="skill-tag">Microservices</span> -->
-        <span class="skill-tag">Git & CI/CD</span>
-      </div>
-    </section>
+<div class="shell">
 
-    <section>
-      <h2>Featured Projects</h2>
-      <div class="project-card">
-        <div class="project-title">
-          <span>Market Lens</span>
-          <a href="https://github.com/sheaba110/market_lens" target="_blank">View Code &rarr;</a>
-        </div>
-        <p class="project-desc">High-throughput data analysis service designed to aggregate and process real-time market data.</p>
-        <div class="skills-grid">
-          <span class="skill-tag">Backend</span>
-          <span class="skill-tag">Database</span>
-        </div>
-      </div>
+  <aside>
+    <div class="portrait-wrap">
+      <img src="assets/photo.jpg" alt="Portrait of Abdalla Sheaba">
+    </div>
+    <div class="id-name">Abdalla Sheaba</div>
+    <div class="id-role">Backend software engineer. Python, Django, systems that hold up under load.</div>
 
-      <div class="project-card">
-        <div class="project-title">
-          <span>Daar Al Bnaa</span>
-          <a href="https://github.com/sheaba110/Daar-ALbnaa-Egypt" target="_blank">View Code &rarr;</a>
-        </div>
-        <p class="project-desc">Management platform API handling enterprise resources, real-time logging, and role-based access.</p>
-        <div class="skills-grid">
-          <span class="skill-tag">API Design</span>
-          <span class="skill-tag">Auth</span>
-        </div>
+    <nav>
+      <a href="#about"><span class="tick"></span> About</a>
+      <a href="#focus"><span class="tick">—</span> Focus</a>
+      <a href="#work"><span class="tick">—</span> Work</a>
+      <a href="#contact"><span class="tick">—</span> Contact</a>
+    </nav>
+
+    <div class="side-contact">
+      <a href="mailto:abdallasheaba97@gmail.com">Email <span class="arrow">↗</span></a>
+      <a href="https://github.com/sheaba110" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+      <a href="https://www.linkedin.com/in/abdalla-sheaba-760154345/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section class="hero reveal" id="top">
+      <span class="eyebrow">Cairo, Egypt · Available for backend roles</span>
+      <h1>I build the part of the system<br>nobody sees — <em>until it breaks.</em></h1>
+      <p class="lede">Backend-focused engineer working in Python and Django. I care about the parts of an application most people never look at: the query that has to stay fast at ten thousand rows, the pipeline that keeps running when a page changes shape under it, the API that still makes sense a year later.</p>
+
+      <div class="entity-card">
+        <div class="entity-head"><span><span class="dot"></span>entity: engineer</span><span>id · 001</span></div>
+        <div class="entity-row"><div class="key">based_in</div><div class="val">Egypt</div></div>
+        <div class="entity-row"><div class="key">graduating</div><div class="val">2028, Software Engineering</div></div>
+        <div class="entity-row"><div class="key">certified</div><div class="val">Meta — Backend Development Professional</div></div>
+        <div class="entity-row"><div class="key">disposition </div><div class="val">deliberate, reads the whole error before reacting</div></div>
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2026 Abdalla Sheaba &bull; Hosted on GitHub Pages</p>
-    </footer>
-  </div>
+    <section class="about reveal" id="about">
+      <h2><span class="eyebrow">01</span> About</h2>
+      <p>I spend most of my time in the layer between the database and the interface — <strong>Django and DRF</strong> on the server, <strong>PostgreSQL</strong> underneath, <strong>Docker</strong> holding the environment together. I like problems with a correct answer: a query plan either improves or it doesn't, a race condition either reproduces or it doesn't.</p>
+      <p>Alongside coursework, I've taken on freelance work — mostly Python testing and web scraping — and used it to get comfortable with the parts of engineering that don't show up in tutorials: unreliable sources, malformed data, and clients who need the thing to just work.</p>
+      <p>Outside of backend work, I'm slow and deliberate about most things I enjoy — brewing coffee with a moka pot, keeping a small garden of mint and roses going, and mechanical keyboards, where I've settled on 75% layouts after trying most of the rest.</p>
+    </section>
+
+    <section class="reveal" id="focus">
+      <h2><span class="eyebrow">02</span> Focus</h2>
+      <p class="section-intro">What I reach for by default, and what it's for.</p>
+      <div class="schema">
+        <div class="schema-row"><div class="field">language</div><div class="value">Python</div><div class="note">primary</div></div>
+        <div class="schema-row"><div class="field">framework</div><div class="value">Django, Django REST Framework</div><div class="note">production APIs</div></div>
+        <div class="schema-row"><div class="field">data</div><div class="value">PostgreSQL, query optimization</div><div class="note">django-debug-toolbar</div></div>
+        <div class="schema-row"><div class="field">scraping</div><div class="value">Scrapy, Playwright</div><div class="note">large-scale collection</div></div>
+        <div class="schema-row"><div class="field">search</div><div class="value">Meilisearch</div><div class="note">sub-100ms at scale</div></div>
+        <div class="schema-row"><div class="field">infra</div><div class="value">Docker, Git, CI/CD</div><div class="note">reproducible envs</div></div>
+      </div>
+    </section>
+
+    <section class="reveal" id="work">
+      <h2><span class="eyebrow">03</span> Work</h2>
+      <p class="section-intro">Two projects I've spent the most time inside.</p>
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">MarketLens</span>
+          <a class="repo" href="https://github.com/sheaba110/market_lens" target="_blank" rel="noopener">source ↗</a>
+        </div>
+        <p>An aggregation platform that pulls product data from multiple Egyptian e-commerce sites into one searchable place. The scraping layer runs on Scrapy and Playwright; search is handled by Meilisearch across 10,000+ products with sub-100ms response times. Backend is Django REST Framework, frontend is Next.js with React InstantSearch.</p>
+        <div class="project-stack"><span>Django REST Framework</span><span>Scrapy</span><span>Playwright</span><span>Meilisearch</span><span>Next.js</span></div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">Daar Al Bnaa</span>
+          <a class="repo" href="https://github.com/sheaba110/Daar-ALbnaa-Egypt" target="_blank" rel="noopener">source ↗</a>
+        </div>
+        <p>Backend for a construction-services platform, built around a clear permission model and documented endpoints. Social authentication is in progress — Google is complete, Facebook and LinkedIn are being added — with the full API surface documented through Swagger via drf-spectacular.</p>
+        <div class="project-stack"><span>Django REST Framework</span><span>OAuth</span><span>drf-spectacular</span><span>PostgreSQL</span></div>
+      </div>
+    </section>
+
+    <section class="reveal" id="contact">
+      <h2><span class="eyebrow">04</span> Contact</h2>
+      <p class="section-intro">The fastest way to reach me is email. I read everything, and I reply to what's specific.</p>
+      <div class="entity-card" style="max-width:420px;">
+        <div class="entity-head"><span><span class="dot"></span>reach</span><span>—</span></div>
+        <div class="entity-row"><div class="key">email</div><div class="val"><a href="mailto:abdallasheaba97@gmail.com">abdallasheaba97@gmail.com</a></div></div>
+        <div class="entity-row"><div class="key">github</div><div class="val"><a href="https://github.com/sheaba110" target="_blank" rel="noopener">github.com/sheaba110</a></div></div>
+        <div class="entity-row"><div class="key">linkedin</div><div class="val"><a href="https://www.linkedin.com/in/abdalla-sheaba-760154345/" target="_blank" rel="noopener">Abdalla-Sheaba</a></div></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <span>© 2026 Abdalla Sheaba</span>
+  <!-- <span>Built by hand, not from a template</span> -->
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
 </body>
 </html>
